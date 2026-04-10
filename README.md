@@ -46,4 +46,20 @@ The workflow builds the site in CI and deploys the generated `dist/` output, so 
 
 In GitHub, go to `Settings -> Pages -> Build and deployment -> Source` and set the source to `GitHub Actions`.
 
-If the repository name changes, update the Vite `base` path in `vite.config.ts` to match the new Pages URL path.
+The production build is configured to deploy from the domain root (`/`), which is the correct setup for the custom bare domain.
+
+In GitHub, go to `Settings -> Pages -> Custom domain`, enter the bare domain, and let GitHub provision the Pages mapping.
+
+At your DNS provider, point the apex domain (`@`) at GitHub Pages with either:
+
+- `A` records: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+- `AAAA` records: `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`
+- Or an `ALIAS`/`ANAME` record to `weslo.github.io` if your DNS provider supports it
+
+Add `www` as a `CNAME` pointing to `weslo.github.io` so GitHub Pages can redirect `www` to the bare domain.
+
+Remove any conflicting `@` or `www` records, avoid wildcard DNS records for the site, and enable `Enforce HTTPS` in GitHub Pages after DNS finishes propagating.
+
+For additional account security, verify the custom domain in GitHub so only this account can use it for Pages.
+
+If you ever move the site back to the default GitHub Pages project URL instead of the custom domain, update the Vite `base` path in `vite.config.ts` to match that subpath.
