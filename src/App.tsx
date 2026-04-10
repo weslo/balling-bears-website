@@ -1,4 +1,4 @@
-import { startTransition, useEffect, useEffectEvent, useState } from 'react'
+import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import landingFrame from './assets/landing-frame.png'
@@ -15,6 +15,10 @@ const subtitlePhrases = [
 ]
 
 const subtitleRotationMs = 5000
+const subtitleExitDurationMs = 260
+const subtitleEnterDurationMs = 620
+
+type SubtitlePhase = 'entering' | 'visible' | 'exiting'
 
 function pickRandomPhrase(currentPhrase?: string) {
   if (subtitlePhrases.length <= 1) {
@@ -33,20 +37,28 @@ function pickRandomPhrase(currentPhrase?: string) {
 
 function App() {
   const [subtitle, setSubtitle] = useState(() => pickRandomPhrase())
-  const [subtitleVersion, setSubtitleVersion] = useState(0)
+  const [subtitlePhase, setSubtitlePhase] = useState<SubtitlePhase>('entering')
+  const isTransitioningRef = useRef(false)
+  const exitTimeoutRef = useRef<number | null>(null)
+  const enterTimeoutRef = useRef<number | null>(null)
 
   const rotateSubtitle = useEffectEvent(() => {
-    setSubtitle((currentSubtitle) => {
-      const nextSubtitle = pickRandomPhrase(currentSubtitle)
+    if (isTransitioningRef.current) {
+      return
+    }
 
-      if (nextSubtitle !== currentSubtitle) {
-        startTransition(() => {
-          setSubtitleVersion((version) => version + 1)
-        })
-      }
+    isTransitioningRef.current = true
+    setSubtitlePhase('exiting')
 
-      return nextSubtitle
-    })
+    exitTimeoutRef.current = window.setTimeout(() => {
+      setSubtitle((currentSubtitle) => pickRandomPhrase(currentSubtitle))
+      setSubtitlePhase('entering')
+
+      enterTimeoutRef.current = window.setTimeout(() => {
+        setSubtitlePhase('visible')
+        isTransitioningRef.current = false
+      }, subtitleEnterDurationMs)
+    }, subtitleExitDurationMs)
   })
 
   useEffect(() => {
@@ -59,13 +71,32 @@ function App() {
     }
   }, [rotateSubtitle])
 
+  useEffect(() => {
+    enterTimeoutRef.current = window.setTimeout(() => {
+      setSubtitlePhase('visible')
+    }, subtitleEnterDurationMs)
+
+    return () => {
+      if (exitTimeoutRef.current !== null) {
+        window.clearTimeout(exitTimeoutRef.current)
+      }
+
+      if (enterTimeoutRef.current !== null) {
+        window.clearTimeout(enterTimeoutRef.current)
+      }
+    }
+  }, [])
+
   return (
     <main className="app">
       <section className="hero">
         <img className="hero-frame" src={landingFrame} alt="" />
         <div className="hero-content">
           <h1>Balling Bears</h1>
-          <p key={subtitleVersion} className="subtitle" aria-live="polite">
+          <p
+            className={`subtitle ${subtitlePhase === 'visible' ? '' : `is-${subtitlePhase}`}`.trim()}
+            aria-live="polite"
+          >
             {subtitle}
           </p>
           <a
