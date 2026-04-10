@@ -1,0 +1,112 @@
+:root {
+  color: #f7f0d0;
+  background:
+    radial-gradient(circle at top, rgba(234, 196, 108, 0.26), transparent 40%),
+    linear-gradient(180deg, #24160f 0%, #110d0b 100%);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.hero {
+  width: min(100%, 720px);
+  padding: 56px 28px;
+  border: 1px solid rgba(234, 196, 108, 0.35);
+  border-radius: 24px;
+  background: rgba(18, 12, 10, 0.74);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #cfb77b;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 10vw, 5rem);
+  line-height: 0.95;
+}
+
+.server {
+  margin: 12px 0 32px;
+  color: #f3d78a;
+  font-size: 1.2rem;
+}
+
+.discord-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: 16px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f3d78a, #cf8d34);
+  color: #1a130f;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+  box-shadow: 0 18px 32px rgba(207, 141, 52, 0.22);
+}
+
+.discord-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 36px rgba(207, 141, 52, 0.3);
+}
+
+.schedule {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(234, 196, 108, 0.22);
+}
+
+.schedule h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+}
+
+.schedule p {
+  margin: 4px 0;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 44px 22px;
+  }
+
+  .discord-button {
+    width: 100%;
+  }
+}
