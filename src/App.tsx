@@ -3,7 +3,6 @@ function App() {
     <main className="app">
       <section className="hero">
         <h1>Balling Bears</h1>
-        <p className="server">Mal&apos;Ganis</p>
         <a
           className="discord-button"
           href="https://discord.gg/jBAHvEAukT"
