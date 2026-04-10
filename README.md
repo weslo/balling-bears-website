@@ -2,7 +2,7 @@
 
 Website for the Balling Bears World of Warcraft raiding guild on Mal'Ganis.
 
-The project uses TypeScript, React, and Vite. Shared project guidance for AI-assisted work lives in `AGENTS.md`.
+The project uses TypeScript, React, Vite, Google Fonts, and Font Awesome Free. Shared project guidance for AI-assisted work lives in `AGENTS.md`.
 
 ## Local Development
 
