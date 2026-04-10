@@ -1,7 +1,8 @@
+import type { CSSProperties } from 'react'
 import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import landingFrame from './assets/landing-frame.png'
+import bearClaw from './assets/bear-claw.png'
 
 // Update this list to change the rotating landing subtitle phrases.
 const subtitlePhrases = [
@@ -74,6 +75,9 @@ function App() {
   const isTransitioningRef = useRef(false)
   const exitTimeoutRef = useRef<number | null>(null)
   const enterTimeoutRef = useRef<number | null>(null)
+  const heroStyle = {
+    '--hero-claw-image': `url(${bearClaw})`,
+  } as CSSProperties
 
   const rotateSubtitle = useEffectEvent(() => {
     if (isTransitioningRef.current) {
@@ -127,8 +131,8 @@ function App() {
 
   return (
     <main className="app">
-      <section className="hero">
-        <img className="hero-frame" src={landingFrame} alt="" />
+      <section className="hero" style={heroStyle}>
+        <div className="hero-watermark" aria-hidden="true" />
         <div className="hero-content">
           <h1>Balling Bears</h1>
           <p
