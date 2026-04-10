@@ -52,9 +52,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 48px;
-  text-align: left;
+  text-align: center;
   text-shadow: 0 10px 26px rgba(0, 0, 0, 0.55);
 }
 
@@ -62,7 +62,6 @@ h1 {
   margin: 0 0 28px;
   font-size: clamp(3rem, 10vw, 5rem);
   line-height: 0.95;
-  max-width: 280px;
 }
 
 .discord-button {
@@ -114,7 +113,6 @@ h1 {
   }
 
   h1 {
-    max-width: 220px;
     margin-bottom: 20px;
   }
 
