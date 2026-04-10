@@ -3,7 +3,7 @@
   background:
     radial-gradient(circle at top, rgba(234, 196, 108, 0.26), transparent 40%),
     linear-gradient(180deg, #24160f 0%, #110d0b 100%);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Germania One", Georgia, "Times New Roman", serif;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -68,6 +68,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   min-width: 220px;
   padding: 16px 28px;
   border-radius: 999px;
@@ -88,9 +89,10 @@ h1 {
 }
 
 .schedule {
+  width: min(100%, 460px);
   margin-top: 36px;
   padding-top: 28px;
-  border-top: 1px solid rgba(234, 196, 108, 0.26);
+  border-top: 2px solid rgba(234, 196, 108, 0.34);
 }
 
 .schedule h2 {

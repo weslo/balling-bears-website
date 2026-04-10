@@ -1,3 +1,5 @@
+import { faDiscord } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import landingFrame from './assets/landing-frame.png'
 
 function App() {
@@ -13,7 +15,8 @@ function App() {
             target="_blank"
             rel="noreferrer"
           >
-            Join Discord
+            <FontAwesomeIcon aria-hidden="true" icon={faDiscord} />
+            <span>Join Discord</span>
           </a>
           <div className="schedule">
             <h2>📅 Raid Schedule</h2>
