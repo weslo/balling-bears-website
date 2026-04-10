@@ -1,8 +1,5 @@
 :root {
   color: #f7f0d0;
-  background:
-    radial-gradient(circle at top, rgba(234, 196, 108, 0.26), transparent 40%),
-    linear-gradient(180deg, #24160f 0%, #110d0b 100%);
   font-family: "Germania One", Georgia, "Times New Roman", serif;
   line-height: 1.5;
   font-weight: 400;
@@ -16,6 +13,10 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(14, 9, 8, 0.68) 0%, rgba(10, 7, 6, 0.82) 100%),
+    radial-gradient(circle at top, rgba(234, 196, 108, 0.16), transparent 42%),
+    url('./assets/background.png') center right / cover no-repeat;
 }
 
 a {
