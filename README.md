@@ -4,9 +4,11 @@ Website for the Balling Bears World of Warcraft raiding guild on Mal'Ganis.
 
 The project uses TypeScript, React, Vite, Google Fonts, and Font Awesome Free. Shared project guidance for AI-assisted work lives in `AGENTS.md`.
 
-Landing visuals currently use bundled image assets in `src/assets/`, including the frame and page background.
+Landing visuals currently use bundled image assets in `src/assets/`, including the page background and the internal bear claw watermark.
 The rotating landing subtitle phrases are configured in `src/App.tsx`.
 The subtitle timing and transition phases are also configured in `src/App.tsx` and `src/styles.css`.
+
+The landing frame itself is now a responsive CSS card, so it can grow with the content on mobile instead of depending on a fixed frame image.
 
 ## Local Development
 
