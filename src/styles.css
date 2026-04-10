@@ -63,7 +63,7 @@ a {
   background-repeat: no-repeat;
   background-position: center 70%;
   background-size: min(88%, 590px);
-  filter: blur(8px) grayscale(1) contrast(0.62) brightness(0.52);
+  filter: blur(6px) grayscale(1) contrast(0.62) brightness(0.52);
   transform: translateY(8px) scale(1.12);
   -webkit-mask-image: radial-gradient(circle at center, #000 35%, transparent 76%);
   mask-image: radial-gradient(circle at center, #000 35%, transparent 76%);
@@ -200,7 +200,7 @@ h1 {
     inset: 0;
     background-position: center 62%;
     background-size: min(96%, 470px);
-    filter: blur(9px) grayscale(1) contrast(0.54) brightness(0.46);
+    filter: blur(7px) grayscale(1) contrast(0.54) brightness(0.46);
   }
 
   .discord-button {
