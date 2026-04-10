@@ -60,9 +60,18 @@ a {
 }
 
 h1 {
-  margin: 0 0 28px;
+  margin: 0;
   font-size: clamp(3rem, 10vw, 5rem);
   line-height: 0.95;
+}
+
+.subtitle {
+  min-height: 1.8em;
+  margin: 10px 0 24px;
+  color: #f3d78a;
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+  letter-spacing: 0.04em;
+  animation: subtitle-swap 420ms ease;
 }
 
 .discord-button {
@@ -105,6 +114,18 @@ h1 {
   margin: 4px 0;
 }
 
+@keyframes subtitle-swap {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 640px) {
   .hero-content {
     padding: 28px 22px;
@@ -116,6 +137,11 @@ h1 {
   }
 
   h1 {
+    font-size: clamp(2.4rem, 12vw, 3.6rem);
+  }
+
+  .subtitle {
+    min-height: 2.4em;
     margin-bottom: 20px;
   }
 
