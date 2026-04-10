@@ -2,7 +2,6 @@ function App() {
   return (
     <main className="app">
       <section className="hero">
-        <p className="eyebrow">World of Warcraft Raiding Guild</p>
         <h1>Balling Bears</h1>
         <p className="server">Mal&apos;Ganis</p>
         <a
