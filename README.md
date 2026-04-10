@@ -6,6 +6,7 @@ The project uses TypeScript, React, Vite, Google Fonts, and Font Awesome Free. S
 
 Landing visuals currently use bundled image assets in `src/assets/`, including the frame and page background.
 The rotating landing subtitle phrases are configured in `src/App.tsx`.
+The subtitle timing and transition phases are also configured in `src/App.tsx` and `src/styles.css`.
 
 ## Local Development
 
