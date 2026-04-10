@@ -58,7 +58,7 @@ a {
 .hero-watermark::before {
   content: "";
   position: absolute;
-  inset: 10% 5% 3%;
+  inset: 0;
   background-image: var(--hero-claw-image);
   background-repeat: no-repeat;
   background-position: center 70%;
@@ -197,7 +197,7 @@ h1 {
   }
 
   .hero-watermark::before {
-    inset: 14% 0 0;
+    inset: 0;
     background-position: center 62%;
     background-size: min(96%, 470px);
     filter: blur(9px) grayscale(1) contrast(0.54) brightness(0.46);
