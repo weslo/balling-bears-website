@@ -52,7 +52,7 @@ a {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.23;
 }
 
 .hero-watermark::before {
@@ -62,9 +62,9 @@ a {
   background-image: var(--hero-claw-image);
   background-repeat: no-repeat;
   background-position: center 70%;
-  background-size: min(82%, 540px);
-  filter: blur(10px) grayscale(1) contrast(0.6) brightness(0.5);
-  transform: translateY(8px) scale(1.08);
+  background-size: min(88%, 590px);
+  filter: blur(8px) grayscale(1) contrast(0.62) brightness(0.52);
+  transform: translateY(8px) scale(1.12);
   -webkit-mask-image: radial-gradient(circle at center, #000 35%, transparent 76%);
   mask-image: radial-gradient(circle at center, #000 35%, transparent 76%);
 }
@@ -199,8 +199,8 @@ h1 {
   .hero-watermark::before {
     inset: 14% 0 0;
     background-position: center 62%;
-    background-size: min(90%, 420px);
-    filter: blur(12px) grayscale(1) contrast(0.5) brightness(0.42);
+    background-size: min(96%, 470px);
+    filter: blur(9px) grayscale(1) contrast(0.54) brightness(0.46);
   }
 
   .discord-button {
