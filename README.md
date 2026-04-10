@@ -34,3 +34,13 @@ Preview the production build locally:
 ```bash
 npm run preview
 ```
+
+## Deployment
+
+GitHub Pages deployment is handled by GitHub Actions on every push to `main`.
+
+The workflow builds the site in CI and deploys the generated `dist/` output, so `dist/` should not be committed.
+
+In GitHub, go to `Settings -> Pages -> Build and deployment -> Source` and set the source to `GitHub Actions`.
+
+If the repository name changes, update the Vite `base` path in `vite.config.ts` to match the new Pages URL path.
