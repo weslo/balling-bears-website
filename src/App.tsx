@@ -13,7 +13,7 @@ function App() {
           Join Discord
         </a>
         <div className="schedule">
-          <h2>Raid Schedule</h2>
+          <h2>📅 Raid Schedule</h2>
           <p>Tuesday 6-9pm PST</p>
           <p>Thursday 6-9pm PST</p>
         </div>
