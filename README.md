@@ -1,5 +1,7 @@
 # 🐻 Balling Bears Website
 
+[![CI](https://github.com/weslo/balling-bears-website/actions/workflows/ci.yml/badge.svg)](https://github.com/weslo/balling-bears-website/actions/workflows/ci.yml)
+
 Website for the Balling Bears World of Warcraft raiding guild on Mal'Ganis.
 
 This is a small React and TypeScript site built with Vite. It is meant to be quick to run locally and easy to update.
@@ -20,13 +22,17 @@ npm run dev
 
 Edit files in `src/`. The browser will reload as you make changes.
 
-Run the current project check:
+Run tests:
+
+```bash
+npm test
+```
+
+Run the full project check:
 
 ```bash
 npm run build
 ```
-
-There is no separate test command yet. Treat a failed build as something to fix before opening a pull request.
 
 ## 🤝 Contributing
 
