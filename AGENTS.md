@@ -16,6 +16,7 @@ Balling Bears is a website for the Balling Bears World of Warcraft raiding guild
 - Commit changes at regular intervals when a meaningful unit of work is complete.
 - Use clear, concise commit messages that explain what changed.
 - Push changes regularly so the remote history stays current and useful.
+- When submitting a pull request, mark it ready for review after the implementation and validation are complete unless the user explicitly asks for a draft.
 - Keep history easy to scan by avoiding vague messages like `updates` or `fix stuff`.
 
 ## File Hygiene
