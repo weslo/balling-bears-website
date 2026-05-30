@@ -3,6 +3,9 @@ import { useEffect, useEffectEvent, useRef, useState } from 'react'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import bearClaw from './assets/bear-claw.png'
+import raiderIoIcon from './assets/externals/raiderio.png'
+import warcraftLogsIcon from './assets/externals/warcraftlogs.png'
+import youtubeIcon from './assets/externals/youtube.png'
 
 // Update this list to change the rotating landing subtitle phrases.
 const subtitlePhrases = [
@@ -18,6 +21,24 @@ const subtitlePhrases = [
 const subtitleRotationMs = 3000
 const subtitleExitDurationMs = 260
 const subtitleEnterDurationMs = 620
+
+const externalLinks = [
+  {
+    href: 'https://www.youtube.com/@ballinbears',
+    icon: youtubeIcon,
+    label: 'YouTube',
+  },
+  {
+    href: 'https://www.warcraftlogs.com/guild/us/malganis/balling%20bears',
+    icon: warcraftLogsIcon,
+    label: 'WarcraftLogs',
+  },
+  {
+    href: 'https://raider.io/guilds/us/malganis/Balling%20Bears',
+    icon: raiderIoIcon,
+    label: 'Raider.io',
+  },
+]
 
 type SubtitlePhase = 'entering' | 'visible' | 'exiting'
 
@@ -157,6 +178,21 @@ function App() {
           </div>
         </div>
       </section>
+      <nav className="external-links" aria-label="External guild links">
+        {externalLinks.map(({ href, icon, label }) => (
+          <a
+            aria-label={label}
+            className="external-link-button"
+            href={href}
+            key={href}
+            rel="noreferrer"
+            target="_blank"
+            title={label}
+          >
+            <img alt="" src={icon} />
+          </a>
+        ))}
+      </nav>
     </main>
   )
 }
