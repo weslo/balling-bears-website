@@ -22,6 +22,8 @@ npm run dev
 
 Edit files in `src/`. The browser will reload as you make changes.
 
+### 🧪 Tests
+
 Run tests:
 
 ```bash
